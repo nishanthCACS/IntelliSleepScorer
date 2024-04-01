@@ -1,3 +1,45 @@
+
+# Installation guide for Anaconda environment
+
+Since this tool need to be intalled in a Python enviornment other than Windows executable.
+Inorder to avoid road blocks I have encountered while started install this package in python Anaconda distribution;
+like Mac/ Unix (I have tested in Mac's Anaconda python).
+
+I have attached the detail procedure below
+
+     1.	conda create --no-default-packages -n EEG_mice python=3.10.13
+     2.	conda activate EEG_mice
+
+Download the source code from the repository from 
+  <a href= "https://github.com/broadinstitute/IntelliSleepScorer/tree/main">IntelliSleepScorer v1.1.1 Main </a>
+change the directory to source code files
+IntelliSleepScorer-main
+
+     3.	cd  …/IntelliSleepScorer-main
+
+First install the lightgbm they preferred in the requirement.txt via the conda; since installing via the pip leads to error in loading for me
+
+     4.	conda install lightgbm=3.3.5
+     5.	pip3 install -r requirements.txt
+
+In my environment it works, I hope you also experience the same.
+I cannot gurantee the performance/ output the tool provides, this is just a quick installation guide.
+(I have tried with Python 3.12.1 and got
+      RuntimeError: Cannot install on Python version 3.12.1; only versions >=3.7,<3.11 are supported.)
+
+
+# Run the software in GUI
+
+Make sure the copy the model in the source code files.
+Seems, we can set the parameters as epoch size: 10 seconds.
+
+     6.	conda activate EEG_mice
+     7. /opt/anaconda3/envs/EEG_mice/bin/python3 …/IntelliSleepScorer-main/IntelliSleepScorer.py
+     
+Wait for some seconds then the GUI will appear.
+
+
+# The following portion is not modified
 # IntelliSleepScorer
 <img src="https://sites.broadinstitute.org/files/styles/original/public/pan-lab/files/logo.webp?itok=yV81aERP" alt="logo" width="300">
 
